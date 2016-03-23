@@ -1,0 +1,30 @@
+{
+  "name": "server-error",
+  "version": "1.0.0",
+  "description": "Create an error and send it to a logger",
+  "main": "index.js",
+  "scripts": {
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test": "standard && npm run deps && NODE_ENV=test node test",
+    "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
+  },
+  "repository": "yoshuawuyts/server-error",
+  "keywords": [
+    "bole",
+    "error",
+    "server",
+    "http-framework"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "error": "^7.0.2"
+  },
+  "devDependencies": {
+    "bole": "^2.0.0",
+    "dependency-check": "^2.5.1",
+    "istanbul": "^0.4.2",
+    "noop2": "^2.0.0",
+    "standard": "^6.0.8",
+    "tape": "^4.5.1"
+  }
+}
