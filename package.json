@@ -1,6 +1,6 @@
 {
   "name": "server-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create an error and send it to a logger",
   "main": "index.js",
   "scripts": {
