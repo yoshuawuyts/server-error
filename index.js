@@ -21,7 +21,6 @@ module.exports = createBoleError
 // null -> null
 function createBoleError (log, opts) {
   opts = opts || {}
-  const logLevel = opts.logLevel || 'info'
 
   assert.equal(typeof log, 'function', 'log should be a function')
   assert.equal(typeof opts, 'object', 'opts should be an object')
@@ -36,7 +35,7 @@ function createBoleError (log, opts) {
     const err = (typeof vals === 'string')
       ? clientError({ message: vals })
       : clientError(vals)
-    log[logLevel](err)
+    log.warn(err.message)
     return err
   }
 
@@ -44,7 +43,7 @@ function createBoleError (log, opts) {
     const err = (typeof vals === 'string')
       ? serverError({ message: vals })
       : serverError(vals)
-    log[logLevel](err)
+    log.error(err)
     return err
   }
 

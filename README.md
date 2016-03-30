@@ -46,16 +46,15 @@ error.wrap(new Error('something critical went wrong'))
 
 ## API
 ### error = serverError(log, opts?)
-Create a new error object that logs to a logger. Takes options:
-- __logLevel:__ which level to log. Defaults to `'info'`
+Create a new error object that logs to a logger.
 
 ### error.client(message)
 Create a new client error that defaults to statusCode 400. Takes either a
-string or object.
+string or object. Uses `log.warn`.
 
 ### error.server(message)
 Create a new server error that defaults to statusCode 500. Takes either a
-string or object.
+string or object. Uses `log.error`.
 
 ### error.wrap(error)
 Wrap an existing error into an error that can be returned to the client. Useful
